@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: rgb(50, 48, 48);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: bisque;
+}
+
+.hide {
+  display: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  height: 100vh;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.quiz-main {
+  background-color: cadetblue;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 4em;
+  align-self: center;
+  height: 100%;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  background-color: bisque;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  color: rgb(50, 48, 48);
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #fe906e;
+}
+
+label:checked {
+  background-color: black;
+}
+
+label input {
+  margin-right: 1rem;
+  border: 0px;
+  width: 20px;
+  height: 1rem;
+}
+
+button {
+  background-color: #fe906e;
+  border: none;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  width: 60%;
+  justify-self: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(50, 48, 48);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: bisque;
+}
+
+button:active {
+  background-color: darkblue;
+  color: bisque;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.answerForm {
+  display: grid;
+  grid-template-rows: 1fr 4rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+.answerOptions {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 0.7rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+.correct,
+.fail {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.answerReveal {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 900;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>QuizAcademy</title>
+</head>
+
+<body>
+  <!-- Div to show questions -->
+  <div class="screen-question">
+    <div class="wrapper">
+      <header>
+        <h1>QuizAcademy</h1>
+      </header>
+      <main class="quiz-main">
+        <form class="answerForm">
+          <div class="answerOptions">
+            <h3>What is the capital of France</h3>
+            <label for="berlin">
+              <input type="radio" id="berlin" name="answers" value="berlin" />
+              <span>Berlin</span>
+            </label>
+            <label for="birmingham">
+              <input type="radio" id="birmingham" name="answers" value="birmingham" />
+              <span>Birmingham</span>
+            </label>
+            <label for="newYork">
+              <input type="radio" id="newYork" name="answers" value="newYork" />
+              <span>New York</span>
+            </label>
+            <label for="paris">
+              <input type="radio" id="paris" name="answers" value="paris" />
+              <span>Paris</span>
+            </label>
+          </div>
+          <button type="submit">Submit Answer</button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <!-- Div to show success result -->
+  <div class="screen-correct hide">
+    <div class="wrapper">
+      <header>
+        <h1>QuizAcademy</h1>
+      </header>
+      <main class="quiz-main">
+        <div class="container">
+          <div class="correct">
+            <h2>Correct</h2>
+            <p>Congratulations! You've successfully answered the question.</p>
+          </div>
+          <button class="nextQuestionButton" type="submit">
+            Next Question
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Div to show fail result -->
+  <div class="screen-fail hide">
+    <div class="wrapper">
+      <header>
+        <h1>QuizAcademy</h1>
+      </header>
+      <main class="quiz-main">
+        <div class="container">
+          <div class="fail">
+            <h2>Incorrect</h2>
+            <p>
+              Looks like you got that one wrong! Here's the correct answer:
+            </p>
+            <p class="answerReveal"></p>
+            <!-- Question & Answer goes here -->
+          </div>
+          <button class="failNextQuestionButton" type="submit">
+            Next Question
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="ryanscript.js"></script>
+</body>
+
+</html>
