@@ -11,6 +11,8 @@ const correctScreen = document.querySelector(".screen-correct");
 const failScreen = document.querySelector(".screen-fail");
 // question counter
 let questionTracker = 0;
+// correct answer tracker
+let correctAnswerTotal = 0;
 // store the selected input
 let selectedInput;
 
@@ -49,7 +51,7 @@ function populateQuestions() {
             allQuestionInputs[i].parentElement.setAttribute("for", currentQuestion.incorrect_answers[i]);
         };
         questionTracker++;
-        console.log(questionTracker);
+        console.log("Question: " + questionTracker);
     });
 };
 
@@ -84,6 +86,8 @@ function handleAnswerSubmit(e) {
     if (selectedAnswer === correctAnswer) {
         questionScreen.classList.add("hide");
         correctScreen.classList.remove("hide");
+        correctAnswerTotal++;
+        console.log("Correct Answers: " + correctAnswerTotal);
     } else {
         // if the incorrect answer is chosen, present a fail screen with the option to proceed to the next question ✅
         questionScreen.classList.add("hide");
@@ -105,12 +109,6 @@ function handleNextQuestion(e) {
     if (questionTracker < 9) {
         populateQuestions();
     } else {
-        alert("no more questions");
+        alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
     };
 };
-
-// function quizGame() {
-//     while (questionTracker < 10) {
-//         populateQuestions();
-//     };
-// };
