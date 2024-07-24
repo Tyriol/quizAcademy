@@ -49,6 +49,7 @@ function populateQuestions() {
             allQuestionInputs[i].parentElement.setAttribute("for", currentQuestion.incorrect_answers[i]);
         };
         questionTracker++;
+        console.log(questionTracker);
     });
 };
 
@@ -101,5 +102,15 @@ function handleNextQuestion(e) {
     correctScreen.classList.add("hide");
     failScreen.classList.add("hide");
     selectedInput.checked = false;
-    populateQuestions();
+    if (questionTracker < 9) {
+        populateQuestions();
+    } else {
+        alert("no more questions");
+    };
 };
+
+// function quizGame() {
+//     while (questionTracker < 10) {
+//         populateQuestions();
+//     };
+// };
