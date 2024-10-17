@@ -23,4 +23,5 @@ Pretty simple, open `index.html` in a browser
 - Add a counter for which question you're on
 - Add a counter for how many correct questions you've answered
 - Fix styling on button on answer screen
-- Add ability to choose different categories
+- Add a start screen with the ability to choose different categories
+- update styling

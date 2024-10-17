@@ -10,13 +10,35 @@
 </head>
 
 <body>
-  <!-- Div to show questions -->
-  <div class="screen-question">
+
+  <!-- Div to show start screen -->
+  <div class="screen-start">
     <div class="wrapper">
       <header>
         <h1>QuizAcademy</h1>
       </header>
-      <main class="quiz-main">
+      <main class="quiz-main start">
+        <div class="container">
+          <div class="start-content">
+            <h2>Welcome to QuizAcademy</h2>
+            <p>
+              Test your knowledge with our quiz. You will be presented with 5
+              multiple choice questions. Good luck!
+            </p>
+          </div>
+          <button class="startButton" type="submit">Start Quiz</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Div to show questions -->
+  <div class="screen-question hide">
+    <div class="wrapper">
+      <header>
+        <h1>QuizAcademy</h1>
+      </header>
+      <main class="quiz-main question">
         <form class="answerForm">
           <div class="answerOptions">
             <h3>What is the capital of France</h3>
@@ -49,7 +71,7 @@
       <header>
         <h1>QuizAcademy</h1>
       </header>
-      <main class="quiz-main">
+      <main class="quiz-main correct-answer">
         <div class="container">
           <div class="correct">
             <h2>Correct</h2>
@@ -69,7 +91,7 @@
       <header>
         <h1>QuizAcademy</h1>
       </header>
-      <main class="quiz-main">
+      <main class="quiz-main incorrect-answer">
         <div class="container">
           <div class="fail">
             <h2>Incorrect</h2>

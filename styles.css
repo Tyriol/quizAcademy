@@ -133,7 +133,8 @@ p {
 }
 
 .correct,
-.fail {
+.fail,
+.start-content {
   display: flex;
   flex-direction: column;
   align-self: center;

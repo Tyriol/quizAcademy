@@ -1,8 +1,10 @@
 // Variables
 // grab html quiz
 const quizForm = document.querySelector(".answerForm");
-// Hardcoded answer for now
+const startButton = document.querySelector(".startButton");
 let correctAnswer;
+// grab start screen
+const startScreen = document.querySelector(".screen-start");
 // grab question screen
 const questionScreen = document.querySelector(".screen-question");
 // grab correct screen
@@ -15,6 +17,16 @@ let questionTracker = 0;
 let correctAnswerTotal = 0;
 // store the selected input
 let selectedInput;
+
+// Event Listeners
+startButton.addEventListener("click", handleStartButton);
+
+function handleStartButton(e) {
+  e.preventDefault();
+  console.log("start button clicked");
+  startScreen.classList.add("hide");
+  questionScreen.classList.remove("hide");
+}
 
 // On page load grab a list of ten questions from the trivia api ✅
 // Create a variable to store the questions returned from the api that I can access later
