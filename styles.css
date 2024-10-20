@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  color: #323030;
+  font-family: "Mulish", sans-serif;
 }
 
 body {
   background-color: rgb(50, 48, 48);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2rem;
-  color: bisque;
 }
 
 .hide {
@@ -18,10 +20,10 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 4rem 1fr;
+  grid-template-rows: 10rem 1fr;
   height: 100vh;
   padding: 1rem;
-  max-width: 1000px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -29,14 +31,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: cadetblue;
+  background-color: #5f9ea0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 
 h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  color: #fe906e;
+  letter-spacing: 0.5rem;
 }
 
 .quiz-main {
@@ -63,6 +67,7 @@ label {
   border-radius: 1rem;
   color: rgb(50, 48, 48);
   cursor: pointer;
+  text-align: center;
 }
 
 label:hover {
@@ -74,10 +79,15 @@ label:checked {
 }
 
 label input {
-  margin-right: 1rem;
+  display: none;
+  /* margin-right: 1rem;
   border: 0px;
   width: 20px;
-  height: 1rem;
+  height: 1.5rem; */
+}
+
+span {
+  font-size: 1.5rem;
 }
 
 button {
@@ -88,8 +98,8 @@ button {
   width: 60%;
   justify-self: center;
   font-weight: 700;
-  font-size: 1rem;
-  color: rgb(50, 48, 48);
+  font-size: 1.5rem;
+  color: #323030;
   cursor: pointer;
 }
 
@@ -103,7 +113,7 @@ button:active {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -114,6 +124,7 @@ h3 {
   margin: 1rem;
   font-size: 1.2rem;
   height: 100%;
+  padding: 1rem;
 }
 
 .answerOptions {
@@ -126,11 +137,10 @@ h2 {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 0.7rem;
-  color: #A0615F;
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 
 .correct,
@@ -140,11 +150,15 @@ p {
   flex-direction: column;
   align-self: center;
   text-align: center;
-  padding: 1rem;
+  padding: 3rem 1rem;
+  background-color: rgba(250, 235, 215, 0.8);
+  margin: 0 1rem;
+  border-radius: 0.5rem;
+  box-shadow: inset;
 }
 
 .answerReveal {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
   font-weight: 900;
 }
