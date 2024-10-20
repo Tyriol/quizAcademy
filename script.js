@@ -21,6 +21,14 @@ let selectedInput;
 // Event Listeners
 startButton.addEventListener("click", handleStartButton);
 
+// const fetchCategories = fetch("https://opentdb.com/api_category.php")
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (response) {
+//     console.log(response);
+//   });
+
 function handleStartButton(e) {
   e.preventDefault();
   console.log("start button clicked");
