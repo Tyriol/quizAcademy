@@ -135,6 +135,7 @@ function handleAnswerSubmit(e) {
     questionScreen.classList.add("hide");
     correctScreen.classList.remove("hide");
     correctAnswerTotal++;
+    document.querySelector(".current-score").innerText = correctAnswerTotal;
     console.log("Correct Answers: " + correctAnswerTotal);
   } else {
     // if the incorrect answer is chosen, present a fail screen with the option to proceed to the next question ✅
