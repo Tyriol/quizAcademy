@@ -20,7 +20,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 10rem 1fr;
+  grid-template-rows: auto 1fr;
   height: 100dvh;
   padding: 1rem;
   max-width: 500px;
@@ -28,8 +28,12 @@ body {
 }
 
 header {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-areas: 
+    "title title"
+    "progress score";
+  gap: 1rem;
+  padding: 1rem 0;
   justify-content: center;
   background-color: #5f9ea0;
   border-top-left-radius: 1rem;
@@ -37,10 +41,19 @@ header {
 }
 
 h1 {
+  grid-area: title;
   margin: 0;
   font-size: 3rem;
   color: #fe906e;
   letter-spacing: 0.5rem;
+}
+
+.progress {
+  grid-area: progress;
+}
+
+.current-score {
+  grid-area: score;
 }
 
 .quiz-main {
