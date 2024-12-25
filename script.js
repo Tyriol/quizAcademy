@@ -74,10 +74,12 @@ function populateQuestions() {
     document.querySelector("h3").innerText = currentQuestion.question;
     //create one array with correct answer and all three incorrect answers
     currentQuestion.incorrect_answers.push(currentQuestion.correct_answer);
-    const allQuestions = [
-      ...currentQuestion.incorrect_answers,
-      currentQuestion.correct_answer,
-    ];
+
+    // const allQuestions = [
+    //   ...currentQuestion.incorrect_answers,
+    //   currentQuestion.correct_answer,
+    // ];
+
     // shuffle the array of answers
     shuffleArray(currentQuestion.incorrect_answers);
     // loop through the array and assign the values to the answer options
