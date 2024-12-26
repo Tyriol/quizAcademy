@@ -11,8 +11,6 @@
 
 <body>
 
-  <!-- Div to show start screen -->
-  <div class="screen-start">
     <div class="wrapper">
       <header>
         <h1>QuizAcademy</h1>
@@ -25,7 +23,9 @@
           <p class="current-score">Start a round</p>
         </div>
       </header>
-      <main class="quiz-main start">
+
+      <!-- Div to show start screen -->
+      <main class="quiz-main start screen-start">
         <div class="container">
           <div class="start-content">
             <h2>Welcome to QuizAcademy</h2>
@@ -37,20 +37,9 @@
           <button class="startButton" type="submit">Start Quiz</button>
         </div>
       </main>
-    </div>
-  </div>
-
-  <!-- Div to show questions -->
-  <div class="screen-question hide">
-    <div class="wrapper">
-      <header>
-        <h1>QuizAcademy</h1>
-        <div>
-          <p>Your Score is:</p>
-          <p class="current-score">0</p>
-        </div>
-      </header>
-      <main class="quiz-main question">
+      
+      <!-- Div to show questions -->
+      <main class="quiz-main question screen-question hide">
         <form class="answerForm">
           <div class="answerOptions">
             <h3>What is the capital of France</h3>
@@ -74,16 +63,10 @@
           <button type="submit">Submit Answer</button>
         </form>
       </main>
-    </div>
-  </div>
 
-  <!-- Div to show success result -->
-  <div class="screen-correct hide">
-    <div class="wrapper">
-      <header>
-        <h1>QuizAcademy</h1>
-      </header>
-      <main class="quiz-main correct-answer">
+      <!-- Div to show success result -->
+
+      <main class="quiz-main correct-answer screen-correct hide">
         <div class="container">
           <div class="correct">
             <h2>Correct</h2>
@@ -94,16 +77,9 @@
           </button>
         </div>
       </main>
-    </div>
-  </div>
-
-  <!-- Div to show fail result -->
-  <div class="screen-fail hide">
-    <div class="wrapper">
-      <header>
-        <h1>QuizAcademy</h1>
-      </header>
-      <main class="quiz-main incorrect-answer">
+      
+      <!-- Div to show fail result -->
+      <main class="quiz-main incorrect-answer screen-fail hide">
         <div class="container">
           <div class="fail">
             <h2>Incorrect</h2>
@@ -119,7 +95,6 @@
         </div>
       </main>
     </div>
-  </div>
   <script src="script.js"></script>
 </body>
 
