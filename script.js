@@ -34,6 +34,9 @@ function handleStartButton(e) {
   console.log("start button clicked");
   startScreen.classList.add("hide");
   questionScreen.classList.remove("hide");
+  populateQuestions();
+  document.querySelector(".progress").innerText = `1/10`;
+  document.querySelector(".current-score").innerText = correctAnswerTotal;
 }
 
 // On page load grab a list of ten questions from the trivia api ✅
@@ -62,7 +65,7 @@ function decodeHTML(text) {
 }
 
 // Player is presented with a question screen with the first question and four options to choose from
-addEventListener("load", populateQuestions);
+// addEventListener("load", populateQuestions);
 
 function populateQuestions() {
   fetchQuestions.then(function (response) {
@@ -101,7 +104,6 @@ function populateQuestions() {
       );
     }
     questionTracker++;
-    console.log("Question: " + questionTracker);
   });
 }
 
@@ -167,4 +169,6 @@ function handleNextQuestion(e) {
   } else {
     alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
   }
+  console.log(questionTracker);
+  document.querySelector(".progress").innerText = `${questionTracker}/10`;
 }
