@@ -32,28 +32,56 @@ header {
   grid-template-areas: 
     "title title"
     "progress score";
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 1rem 0;
   justify-content: center;
+  justify-items: center;
   background-color: #5f9ea0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+header div {
+  text-align: center;
+  font-weight: 800;
+  background-color: rgba(250, 235, 215, 0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 60%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
   grid-area: title;
   margin: 0;
   font-size: 3rem;
-  color: #fe906e;
+  font-weight: 800;
+  /* color: #fe906e; */
   letter-spacing: 0.5rem;
 }
 
 .progress {
   grid-area: progress;
+  animation: pulse 1s infinite;
 }
 
 .current-score {
   grid-area: score;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .quiz-main {
