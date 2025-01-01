@@ -68,6 +68,7 @@ function decodeHTML(text) {
 // addEventListener("load", populateQuestions);
 
 function populateQuestions() {
+  //TODO: Remove the refetch every time the questions are populated
   fetchQuestions.then(function (response) {
     //store current question object in a variable
     const currentQuestion = response.results[questionTracker];
@@ -77,11 +78,6 @@ function populateQuestions() {
     document.querySelector("h3").innerText = currentQuestion.question;
     //create one array with correct answer and all three incorrect answers
     currentQuestion.incorrect_answers.push(currentQuestion.correct_answer);
-
-    // const allQuestions = [
-    //   ...currentQuestion.incorrect_answers,
-    //   currentQuestion.correct_answer,
-    // ];
 
     // shuffle the array of answers
     shuffleArray(currentQuestion.incorrect_answers);
