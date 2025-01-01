@@ -12,7 +12,7 @@ const correctScreen = document.querySelector(".screen-correct");
 // grab fail screen
 const failScreen = document.querySelector(".screen-fail");
 // question counter
-let questionTracker = 0;
+let questionTracker = 1;
 // correct answer tracker
 let correctAnswerTotal = 0;
 // store the selected input
@@ -78,11 +78,6 @@ function populateQuestions() {
     //create one array with correct answer and all three incorrect answers
     currentQuestion.incorrect_answers.push(currentQuestion.correct_answer);
 
-    // const allQuestions = [
-    //   ...currentQuestion.incorrect_answers,
-    //   currentQuestion.correct_answer,
-    // ];
-
     // shuffle the array of answers
     shuffleArray(currentQuestion.incorrect_answers);
     // loop through the array and assign the values to the answer options
@@ -103,7 +98,6 @@ function populateQuestions() {
         currentQuestion.incorrect_answers[i]
       );
     }
-    questionTracker++;
   });
 }
 
@@ -159,16 +153,17 @@ document
   .querySelector(".failNextQuestionButton")
   .addEventListener("click", handleNextQuestion);
 
-function handleNextQuestion(e) {
-  questionScreen.classList.remove("hide");
-  correctScreen.classList.add("hide");
-  failScreen.classList.add("hide");
-  selectedInput.checked = false;
+function handleNextQuestion() {
   if (questionTracker < 9) {
     populateQuestions();
   } else {
     alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
   }
+  questionTracker++;
+  questionScreen.classList.remove("hide");
+  correctScreen.classList.add("hide");
+  failScreen.classList.add("hide");
+  selectedInput.checked = false;
   console.log(questionTracker);
   document.querySelector(".progress").innerText = `${questionTracker}/10`;
 }
