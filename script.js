@@ -31,6 +31,7 @@ correctNextButton.addEventListener("click", handleNextQuestion);
 failNextButton.addEventListener("click", handleNextQuestion);
 quizForm.addEventListener("submit", handleAnswerSubmit);
 startAgainButton.addEventListener("click", handlePlayAgain);
+addEventListener("load", populateQuestions);
 
 // const fetchCategories = fetch("https://opentdb.com/api_category.php")
 //   .then(function (response) {
@@ -53,6 +54,7 @@ function handleStartButton(e) {
 // Play Agin
 function handlePlayAgain(e) {
   e.preventDefault();
+  questionBank = fetchQuestions();
   questionTracker = 1;
   correctAnswerTotal = 0;
   endScreen.classList.add("hide");
@@ -64,21 +66,26 @@ function handlePlayAgain(e) {
 
 // On page load grab a list of ten questions from the trivia api ✅
 // Create a variable to store the questions returned from the api that I can access later
-const fetchQuestions = fetch(
-  "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (response) {
-    // decode response
-    response.results.forEach((question) => {
-      question.question = decodeHTML(question.question);
-      question.correct_answer = decodeHTML(question.correct_answer);
-      question.incorrect_answers = question.incorrect_answers.map(decodeHTML);
+function fetchQuestions() {
+  const questionBank = fetch(
+    "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (response) {
+      // decode response
+      response.results.forEach((question) => {
+        question.question = decodeHTML(question.question);
+        question.correct_answer = decodeHTML(question.correct_answer);
+        question.incorrect_answers = question.incorrect_answers.map(decodeHTML);
+      });
+      return response;
     });
-    return response;
-  });
+  return questionBank;
+}
+
+let questionBank = fetchQuestions();
 
 // Decode helper function for decoding html entities
 function decodeHTML(text) {
@@ -89,7 +96,7 @@ function decodeHTML(text) {
 
 // Player is presented with a question screen with the first question and four options to choose from
 function populateQuestions() {
-  fetchQuestions.then(function (response) {
+  questionBank.then(function (response) {
     //store current question object in a variable
     const currentQuestion = response.results[questionTracker - 1];
     //set correct answer to the correct answer of the current question
