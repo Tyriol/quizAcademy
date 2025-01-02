@@ -11,6 +11,8 @@ const questionScreen = document.querySelector(".screen-question");
 const correctScreen = document.querySelector(".screen-correct");
 // grab fail screen
 const failScreen = document.querySelector(".screen-fail");
+// grab end screen
+const endScreen = document.querySelector(".screen-end");
 // question counter
 let questionTracker = 1;
 // correct answer tracker
@@ -162,7 +164,10 @@ function handleNextQuestion() {
     console.log(questionTracker);
     document.querySelector(".progress").innerText = `${questionTracker}/10`;
   } else {
-    document.get;
+    correctScreen.classList.add("hide");
+    failScreen.classList.add("hide");
+    endScreen.classList.remove("hide");
+    document.querySelector(".end-score").innerText = correctAnswerTotal;
     alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
   }
 }

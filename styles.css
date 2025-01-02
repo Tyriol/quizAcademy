@@ -182,7 +182,8 @@ p {
 
 .correct,
 .fail,
-.start-content {
+.start-content,
+.end {
   display: flex;
   flex-direction: column;
   align-self: center;
