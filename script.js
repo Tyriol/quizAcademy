@@ -1,7 +1,12 @@
 // Variables
 // grab html quiz
 const quizForm = document.querySelector(".answerForm");
+// buttons
 const startButton = document.querySelector(".startButton");
+const correctNextButton = document.querySelector(".nextQuestionButton");
+const failNextButton = document.querySelector(".failNextQuestionButton");
+const startAgainButton = document.querySelector(".startAgainButton");
+
 let correctAnswer;
 // grab start screen
 const startScreen = document.querySelector(".screen-start");
@@ -22,6 +27,10 @@ let selectedInput;
 
 // Event Listeners
 startButton.addEventListener("click", handleStartButton);
+correctNextButton.addEventListener("click", handleNextQuestion);
+failNextButton.addEventListener("click", handleNextQuestion);
+quizForm.addEventListener("submit", handleAnswerSubmit);
+startAgainButton.addEventListener("click", handlePlayAgain);
 
 // const fetchCategories = fetch("https://opentdb.com/api_category.php")
 //   .then(function (response) {
@@ -31,10 +40,22 @@ startButton.addEventListener("click", handleStartButton);
 //     console.log(response);
 //   });
 
+// start quiz
 function handleStartButton(e) {
   e.preventDefault();
-  console.log("start button clicked");
   startScreen.classList.add("hide");
+  questionScreen.classList.remove("hide");
+  populateQuestions();
+  document.querySelector(".progress").innerText = `1/10`;
+  document.querySelector(".current-score").innerText = correctAnswerTotal;
+}
+
+// Play Agin
+function handlePlayAgain(e) {
+  e.preventDefault();
+  questionTracker = 1;
+  correctAnswerTotal = 0;
+  endScreen.classList.add("hide");
   questionScreen.classList.remove("hide");
   populateQuestions();
   document.querySelector(".progress").innerText = `1/10`;
@@ -111,9 +132,6 @@ function shuffleArray(arr) {
   }
 }
 
-// Player selects answers and clicks Submit button ✅
-quizForm.addEventListener("submit", handleAnswerSubmit);
-
 // if no option is selected, prompt that they need to select an option ✅
 function handleAnswerSubmit(e) {
   e.preventDefault();
@@ -146,12 +164,6 @@ function handleAnswerSubmit(e) {
 }
 
 // if "next question" is clicked, present the question screen with the next question and four options to choose from
-document
-  .querySelector(".nextQuestionButton")
-  .addEventListener("click", handleNextQuestion);
-document
-  .querySelector(".failNextQuestionButton")
-  .addEventListener("click", handleNextQuestion);
 
 function handleNextQuestion() {
   if (questionTracker < 10) {
@@ -168,6 +180,5 @@ function handleNextQuestion() {
     failScreen.classList.add("hide");
     endScreen.classList.remove("hide");
     document.querySelector(".end-score").innerText = correctAnswerTotal;
-    alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
   }
 }
