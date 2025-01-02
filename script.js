@@ -65,8 +65,6 @@ function decodeHTML(text) {
 }
 
 // Player is presented with a question screen with the first question and four options to choose from
-// addEventListener("load", populateQuestions);
-
 function populateQuestions() {
   fetchQuestions.then(function (response) {
     //store current question object in a variable
@@ -156,14 +154,15 @@ document
 function handleNextQuestion() {
   if (questionTracker < 10) {
     populateQuestions();
+    questionTracker++;
+    questionScreen.classList.remove("hide");
+    correctScreen.classList.add("hide");
+    failScreen.classList.add("hide");
+    selectedInput.checked = false;
+    console.log(questionTracker);
+    document.querySelector(".progress").innerText = `${questionTracker}/10`;
   } else {
+    document.get;
     alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
   }
-  questionTracker++;
-  questionScreen.classList.remove("hide");
-  correctScreen.classList.add("hide");
-  failScreen.classList.add("hide");
-  selectedInput.checked = false;
-  console.log(questionTracker);
-  document.querySelector(".progress").innerText = `${questionTracker}/10`;
 }
