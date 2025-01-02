@@ -70,7 +70,7 @@ function decodeHTML(text) {
 function populateQuestions() {
   fetchQuestions.then(function (response) {
     //store current question object in a variable
-    const currentQuestion = response.results[questionTracker];
+    const currentQuestion = response.results[questionTracker - 1];
     //set correct answer to the correct answer of the current question
     correctAnswer = currentQuestion.correct_answer;
     //populate h3 with current question title
@@ -154,7 +154,7 @@ document
   .addEventListener("click", handleNextQuestion);
 
 function handleNextQuestion() {
-  if (questionTracker < 9) {
+  if (questionTracker < 10) {
     populateQuestions();
   } else {
     alert(`no more questions, you got ${correctAnswerTotal} questions correct`);
